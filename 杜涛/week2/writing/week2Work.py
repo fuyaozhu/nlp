@@ -32,16 +32,6 @@ class TorchModel(nn.Module):
             return y_pred  # 输出预测结果
 
 
-# 生成一个样本, 样本的生成方法，代表了我们要学习的规律
-# 随机生成一个5维向量，如果第一个值大于第五个值，认为是正样本，反之为负样本
-def build_sample():
-    x = np.random.random(5)
-    if x[0] > x[4]:
-        return x, 1
-    else:
-        return x, 0
-
-
 # 随机生成一批样本
 # 正负样本均匀生成
 def build_dataset(total_sample_num):
